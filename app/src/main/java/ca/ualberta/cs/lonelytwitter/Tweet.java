@@ -1,7 +1,7 @@
 package ca.ualberta.cs.lonelytwitter;
 
 import java.util.Date;
-
+import java.util.List;
 
 
 /**
@@ -10,9 +10,11 @@ import java.util.Date;
 
 public class Tweet {
 
+    //Code provided by the LI...
    private Date date;
    private String message;
     private static final Integer MAX_CHARS = 140;
+    private List<AbstractMood> listOfMoods;
 
     Tweet() {
         this.date = new Date();
@@ -31,11 +33,11 @@ public class Tweet {
     public String getMessage() {return this.message;}
 
     public void setMessage(String newMessage) throws TweetTooLongException {
-        if (message.length() <= this.MAX_CHARS){
+        if (message.length() <= this.MAX_CHARS) {
             this.message = newMessage;
-        }
-        else {
+        } else {
             throw new TweetTooLongException();
+        }
     }
 
 }
